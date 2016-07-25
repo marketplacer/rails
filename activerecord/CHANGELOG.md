@@ -1,3 +1,31 @@
+*   Virtual attributes will no longer raise when read on models loaded from the
+    database
+
+    *Sean Griffin*
+
+*   Fixes multi-parameter attributes conversion with invalid params.
+
+    *Hiroyuki Ishii*
+
+*   Add newline between each migration in `structure.sql`.
+
+    Keeps schema migration inserts as a single commit, but allows for easier
+    git diff-ing. Fixes #25504.
+
+    *Grey Baker*, *Norberto Lopes*
+
+*   Using `group` with an attribute that has a custom type will properly cast
+    the hash keys after calling a calculation method like `count`. Fixes #25595.
+
+    *Sean Griffin*
+
+*   Ensure concurrent invocations of the connection reaper cannot allocate the
+    same connection to two threads.
+
+    Fixes #25585.
+
+    *Matthew Draper*
+
 ## Rails 5.0.0 (June 30, 2016) ##
 
 *   Ensure hashes can be assigned to attributes created using `composed_of`.
